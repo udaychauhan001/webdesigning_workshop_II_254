@@ -1,14 +1,14 @@
 function calculateResult() {
-// Step 1: Get number of subjects
+
 
     let numSubjects = parseInt(document.getElementById("numSubjects").value);
-    // Step 2: Validate input
+    
     if (isNaN(numSubjects) || numSubjects <= 0) {
 
         alert("Please enter a valid number of subjects (greater than 0).");
         return;
     }
-    // Step 3: Collect marks using a loop
+    
     let totalMarks = 0;
     let marksArray = [];
     for (let i = 1; i <= numSubjects; i++) {
@@ -20,7 +20,7 @@ function calculateResult() {
         marksArray.push(mark);
         totalMarks += mark;
     }
-    // Step 4: Calculate average
+    
     let averageMarks = totalMarks / numSubjects;
     averageMarks = parseFloat(averageMarks.toFixed(2));
     // Step 5: Determine grade
@@ -52,10 +52,10 @@ function calculateResult() {
         resultStatus = "FAIL";
         resultClass = "fail";
     }
-    // Step 7: Display results on the webpage
+   
     let resultBox = document.getElementById("resultBox");
     resultBox.innerHTML = `
-        <h2>📊 Result Summary</h2>
+        <h2>📊 Result Summary</h2
         <div class="result-item">
             <span>Number of Subjects</span>
             <span class="result-value">${numSubjects}</span>
@@ -83,3 +83,5 @@ function calculateResult() {
     `;
     resultBox.classList.remove("hidden");
 }
+
+
