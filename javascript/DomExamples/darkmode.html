@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark Mode Toggle</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+
+        body.light {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        body.dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Center button in middle of page */
+        .container {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #4facfe, #00c6ff); /* bluish */
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="light">
+
+    <h1 id="heading">Dark Mode Toggle</h1>
+
+    <div class="container">
+        <button onclick="toggleMode()">Toggle Mode</button>
+    </div>
+
+    <script>
+        function toggleMode() {
+            let body = document.body;
+            let heading = document.getElementById("heading");
+
+            if (body.classList.contains("light")) {
+                body.classList.remove("light");
+                body.classList.add("dark");
+                heading.style.color = "white";
+            } else {
+                body.classList.remove("dark");
+                body.classList.add("light");
+                heading.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

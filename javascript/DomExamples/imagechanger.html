@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Switcher</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f5f5f5;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #2c7be5;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        img {
+            width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #2c7be5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1a5edb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Switcher</h1>
+    <div class="container">
+        <img id="myImage" src="" >
+        <br>
+        <button onclick="switchImage()">Switch Image</button>
+    </div>
+    <script>
+        let images = [
+            "https://i0.wp.com/picjumbo.com/wp-content/uploads/waterfalls-in-the-middle-of-a-misty-forest-free-image.jpeg?w=2210&quality=70",
+            "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-waterfall-in-sunny-jungle-forest-free-image.jpeg?w=2210&quality=70",
+            "https://i0.wp.com/picjumbo.com/wp-content/uploads/modern-luxury-villa-with-terrace-over-the-river-amidst-the-forest-free-image.jpeg?w=2210&quality=70",
+            "https://i0.wp.com/picjumbo.com/wp-content/uploads/minimalist-villa-situated-directly-on-the-river-in-the-middle-of-a-forest-free-photo.jpeg?w=2210&quality=70"
+        ];
+        let index = 0;
+        document.getElementById("myImage").src = images[index];
+
+        function switchImage() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            document.getElementById("myImage").src = images[index];
+        }
+    </script>
+
+</body>
+</html>
